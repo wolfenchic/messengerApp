@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from home.views import get_home_page, get_secret_page
+from home.views import get_home_page, get_secret_page, get_message_inbox
 from accounts import urls as accounts_urls
+from messenger import urls as messenger_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', get_home_page, name='home'),
     url(r'^secret/', get_secret_page, name='secret'),
     url(r'^accounts/', include(accounts_urls)),
+    url(r'^messenger/', include(messenger_urls)),
 ]

@@ -10,4 +10,7 @@ def get_home_page(request):
 def get_secret_page(request):
   return render(request, 'secret.html')
   
+def get_message_inbox(request):
+  return render(request, 'inbox.html')
+  
   
