@@ -27,7 +27,7 @@ SECRET_KEY = ')4x6-inw$&_pk6&7&g@lgc#5@i4dec-5e!8!^8*$$35qnxg-*m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["authapp-wolfenchic.c9users.io"]
+ALLOWED_HOSTS = ["authapp-wolfenchic.c9users.io", "wolfenchic-messenger-app.herokuapp.com"]
 
 
 # Application definition
