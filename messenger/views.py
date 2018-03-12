@@ -9,13 +9,10 @@ def inbox(request):
 def message(request, id): 
     message = get_object_or_404(Message, pk=id)
     return render(request, 'messenger/mail.html', {'message': message})
+    
+def sent(request):
+    return render(request, 'messenger/sent_items.html')
 
-
-def view_message(request, id):
-    message = get_object_or_404(Message, pk=id)
-    message.read=True
-    message.save()
-    return render(request, "messenger/view_message.html", { 'message': message})
     
 def compose_message(request):
     if request.method=="POST":
@@ -29,5 +26,14 @@ def compose_message(request):
     
     return render(request, "messenger/compose_message.html", { 'form': form })
     
+
+
+def view_message(request, id):
+    message = get_object_or_404(Message, pk=id)
+    message.read=True
+    message.save()
+    return render(request, "messenger/view_message.html", { 'message': message})
+    
+
     
     
