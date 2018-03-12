@@ -7,5 +7,5 @@ def inbox(request):
     
 def message(request, id): 
     message = get_object_or_404(Message, pk=id)
-    return render(request, "messenger/mail.html", {'message': message})
+    return render(request, 'messenger/mail.html', {'message': message})
     
