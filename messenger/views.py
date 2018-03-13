@@ -8,6 +8,8 @@ def inbox(request):
     
 def message(request, id): 
     message = get_object_or_404(Message, pk=id)
+    message.read = True
+    message.save()
     return render(request, 'messenger/mail.html', {'message': message})
     
 def sent(request):

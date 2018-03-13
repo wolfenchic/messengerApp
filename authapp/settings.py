@@ -69,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'messenger.contexts.count_unread_mail',
             ],
         },
     },
@@ -133,3 +134,5 @@ STATIC_URL = '/static/'
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
+
+MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"

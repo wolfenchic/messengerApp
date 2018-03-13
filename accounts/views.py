@@ -7,6 +7,7 @@ from .forms import UserRegistrationForm
 # Create your views here.
 def logout(request):
     auth.logout(request)
+    messages.success(request, "You have successfully logged out")
     return redirect("home")
     
 def login(request):
@@ -23,6 +24,7 @@ def login(request):
             if user is not None:
                 #Log them in
                 auth.login(request, user)
+                messages.success(request, "You have successfully logged in")
                 return redirect(redirect_to)
     
             else:
