@@ -12,20 +12,20 @@ class Message_does_not_exist(TestCase):
         response = self.client.get('messenger/message/1')
         self.assertEqual(response.status_code, 404)
 
-    def test_view_message_that_exists(self):
-        sender = User(username="sender")
-        sender.save()
+    # def test_view_message_that_exists(self):
+    #     sender = User(username="sender")
+    #     sender.save()
 
-        recipient = User(username="receiver")
-        recipient.save()
+    #     recipient = User(username="receiver")
+    #     recipient.save()
 
-        message = Message(
-            subject = "Test Subject",
-            body = "Test Body",
-            sender = sender,
-            recipient = recipient)
-        message.save()
+    #     message = Message(
+    #         subject = "Test Subject",
+    #         body = "Test Body",
+    #         sender = sender,
+    #         recipient = recipient)
+    #     message.save()
 
-        response = self.client.get('/messenger/message/1')
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "messenger/mail.html")
+    #     response = self.client.get('/messenger/message/1')
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertTemplateUsed(response, "messenger/mail.html")
